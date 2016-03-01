@@ -1,0 +1,86 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Recipe card view -->
+
+    <style name="AppTheme.RecipeCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/card_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/card_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/card_margin_top</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:selectableItemBackground</item>
+    </style>
+
+    <!-- Card image -->
+
+    <style name="AppTheme.CardImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/card_image_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!-- Card text views -->
+
+    <style name="AppTheme.NormalText">
+        <item name="android:paddingLeft">@dimen/content_space_left</item>
+        <item name="android:paddingRight">@dimen/content_space_right</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTheme.RecipeTitle" parent="AppTheme.NormalText">
+        <item name="android:layout_marginTop">@dimen/content_space_top</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="AppTheme.RecipeIngredientsCard" parent="AppTheme.NormalText">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="AppTheme.Header" parent="AppTheme.NormalText">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:layout_marginTop">@dimen/header_space_top</item>
+        <item name="android:layout_marginBottom">@dimen/header_space_bottom</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="AppTheme.RecipeDetails" parent="AppTheme.NormalText">
+        <item name="android:layout_marginBottom">@dimen/content_space_bottom</item>
+    </style>
+
+    <!-- Share button -->
+
+    <style name="AppTheme.ShareButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/card_action_button_margin_left</item>
+        <item name="android:minWidth">@dimen/card_action_button_min_width</item>
+        <item name="android:paddingLeft">@dimen/card_action_button_padding_left</item>
+        <item name="android:paddingRight">@dimen/card_action_button_padding_right</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ShareButtonTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorRippleShareButton</item>
+    </style>
+
+</resources>
