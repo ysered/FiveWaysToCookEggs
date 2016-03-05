@@ -1,38 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
-    style="@style/AppTheme.RecipeCard"
-    card_view:cardCornerRadius="@dimen/card_corner_radius"
-    card_view:cardElevation="@dimen/card_elevation"
-    card_view:cardMaxElevation="@dimen/card_max_elevation">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <data>
+        <variable
+            name="recipe"
+            type="com.example.android.fivewaystocookeggs.Recipe" />
+        <variable
+            name="cardViewOnClickHandler"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="shareButtonOnClickHandler"
+            type="android.view.View.OnClickListener" />
+    </data>
 
-        <ImageView
-            android:id="@+id/recipe_image_view"
-            style="@style/AppTheme.CardImage"
-            android:contentDescription="@string/card_image_desc"
-            android:transitionName="@string/recipe_image_transition_name" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        style="@style/AppTheme.RecipeCard"
+        android:onClick="@{cardViewOnClickHandler}"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardElevation="@dimen/card_elevation"
+        card_view:cardMaxElevation="@dimen/card_max_elevation">
 
-        <TextView
-            android:id="@+id/card_title_text_view"
-            style="@style/AppTheme.RecipeTitle"
-            android:transitionName="@string/recipe_title_transition_name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/card_ingredients_line_text_view"
-            style="@style/AppTheme.RecipeIngredientsCard" />
+            <ImageView
+                android:id="@+id/recipe_image_view"
+                style="@style/AppTheme.CardImage"
+                imageResource="@{recipe.imageResource}"
+                android:contentDescription="@string/card_image_desc"
+                android:transitionName="@string/recipe_image_transition_name" />
 
-        <Button
-            android:id="@+id/share_button"
-            style="@style/AppTheme.ShareButton"
-            android:text="@string/share"
-            android:theme="@style/ShareButtonTheme" />
+            <TextView
+                android:id="@+id/card_title_text_view"
+                style="@style/AppTheme.RecipeTitle"
+                android:text="@{recipe.title}"
+                android:transitionName="@string/recipe_title_transition_name" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/card_ingredients_line_text_view"
+                style="@style/AppTheme.RecipeIngredientsCard"
+                android:text="@{recipe.ingredientsLine}" />
 
-</android.support.v7.widget.CardView>
+            <Button
+                android:id="@+id/share_button"
+                style="@style/AppTheme.ShareButton"
+                android:onClick="@{shareButtonOnClickHandler}"
+                android:text="@string/share"
+                android:theme="@style/ShareButtonTheme" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

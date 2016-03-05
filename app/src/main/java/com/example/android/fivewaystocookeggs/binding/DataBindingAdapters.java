@@ -1,4 +1,4 @@
-package com.example.android.fivewaystocookeggs;
+package com.example.android.fivewaystocookeggs.binding;
 
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;

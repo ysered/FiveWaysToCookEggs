@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import com.example.android.fivewaystocookeggs.binding.RecipeBindingAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recipesRecyclerView = (RecyclerView) findViewById(R.id.recipes_recycler_view);
         recipesRecyclerView.setHasFixedSize(true);
 
-        final RecyclerView.Adapter adapter =
-                new RecipeCardsAdapter(this, MainActivity.this, getRecipes());
-        recipesRecyclerView.setAdapter(adapter);
+        final RecipeBindingAdapter recipeBindingAdapter =
+                new RecipeBindingAdapter(this, this, getRecipes());
+        recipesRecyclerView.setAdapter(recipeBindingAdapter);
     }
 
     private Recipe[] getRecipes() {

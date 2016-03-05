@@ -7,20 +7,23 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class RecipeCardOnClickListener implements CardView.OnClickListener {
+public class RecipeCardOnClickHandler implements CardView.OnClickListener {
 
     private final Context mContext;
     private final Activity mActivity;
     private final Recipe mRecipe;
-    private final RecipeCardsAdapter.RecipeViewHolder mHolder;
+    private final ImageView mRecipeImageView;
+    private final TextView mRecipeTitleTextView;
 
-    public RecipeCardOnClickListener(Context context, Activity activity, Recipe recipe,
-                                     RecipeCardsAdapter.RecipeViewHolder holder) {
+    public RecipeCardOnClickHandler(Context context, Activity activity, Recipe recipe, CardView recipeCardView) {
         mContext = context;
         mActivity = activity;
         mRecipe = recipe;
-        mHolder = holder;
+        mRecipeImageView = (ImageView) recipeCardView.findViewById(R.id.recipe_image_view);
+        mRecipeTitleTextView = (TextView) recipeCardView.findViewById(R.id.card_title_text_view);
     }
 
     @Override
@@ -30,12 +33,12 @@ public class RecipeCardOnClickListener implements CardView.OnClickListener {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             Pair<View, String> image = Pair.create(
-                    (View) mHolder.recipeImageView,
-                    mHolder.recipeImageView.getTransitionName());
+                    (View) mRecipeImageView,
+                    mContext.getString(R.string.recipe_image_transition_name));
 
             Pair<View, String> title = Pair.create(
-                    (View) mHolder.recipeTitleTextView,
-                    mHolder.recipeTitleTextView.getTransitionName());
+                    (View) mRecipeTitleTextView,
+                    mContext.getString(R.string.recipe_title_transition_name));
 
             ActivityOptionsCompat options =
                     ActivityOptionsCompat.makeSceneTransitionAnimation(
