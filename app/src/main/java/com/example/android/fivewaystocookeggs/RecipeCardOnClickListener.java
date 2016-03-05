@@ -15,12 +15,12 @@ public class RecipeCardOnClickListener implements CardView.OnClickListener {
     private final Recipe mRecipe;
     private final RecipeCardsAdapter.RecipeViewHolder mHolder;
 
-    public RecipeCardOnClickListener(Context mContext, Activity mActivity, Recipe mRecipe,
-                                     RecipeCardsAdapter.RecipeViewHolder mHolder) {
-        this.mContext = mContext;
-        this.mActivity = mActivity;
-        this.mRecipe = mRecipe;
-        this.mHolder = mHolder;
+    public RecipeCardOnClickListener(Context context, Activity activity, Recipe recipe,
+                                     RecipeCardsAdapter.RecipeViewHolder holder) {
+        mContext = context;
+        mActivity = activity;
+        mRecipe = recipe;
+        mHolder = holder;
     }
 
     @Override
