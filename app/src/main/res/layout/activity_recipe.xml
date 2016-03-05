@@ -1,63 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include layout="@layout/toolbar" />
+    <data>
+        <variable
+            name="recipe"
+            type="com.example.android.fivewaystocookeggs.Recipe" />
+    </data>
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/recipe_layout"
+        <include layout="@layout/toolbar" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/recipe_image_view"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:contentDescription="@string/card_image_desc"
-                android:scaleType="centerCrop"
-                android:transitionName="@string/recipe_image_transition_name" />
-
-            <TextView
-                android:id="@+id/recipe_title_text_view"
-                style="@style/AppTheme.RecipeTitle"
+            <LinearLayout
+                android:id="@+id/recipe_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:transitionName="@string/recipe_title_transition_name" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/recipe_ingredients_header"
-                style="@style/AppTheme.Header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ingredients" />
+                <ImageView
+                    android:id="@+id/recipe_image_view"
+                    style="@style/AppTheme.CardImage"
+                    imageResource="@{recipe.imageResource}"
+                    android:transitionName="@string/recipe_image_transition_name" />
 
-            <TextView
-                android:id="@+id/recipe_ingredients_text_view"
-                style="@style/AppTheme.NormalText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/recipe_title_text_view"
+                    style="@style/AppTheme.RecipeTitle"
+                    android:text="@{recipe.title}"
+                    android:transitionName="@string/recipe_title_transition_name" />
 
-            <TextView
-                android:id="@+id/how_to_text_view"
-                style="@style/AppTheme.Header"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/how_to" />
+                <TextView
+                    android:id="@+id/recipe_ingredients_header"
+                    style="@style/AppTheme.Header"
+                    android:text="@string/ingredients" />
 
-            <TextView
-                android:id="@+id/recipe_details_text_view"
-                style="@style/AppTheme.RecipeDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/recipe_ingredients_text_view"
+                    style="@style/AppTheme.NormalText"
+                    android:text="@{recipe.ingredients}" />
 
-    </ScrollView>
+                <TextView
+                    android:id="@+id/how_to_text_view"
+                    style="@style/AppTheme.Header"
+                    android:text="@string/how_to" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/recipe_details_text_view"
+                    style="@style/AppTheme.RecipeDetails"
+                    android:text="@{recipe.details}" />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>
+
