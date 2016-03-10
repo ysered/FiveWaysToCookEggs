@@ -27,7 +27,7 @@
                 <ImageView
                     android:id="@+id/recipe_image_view"
                     style="@style/AppTheme.CardImage"
-                    imageResource="@{recipe.imageResource}"
+                    imageResource="\@drawable/@{recipe.imageName}"
                     android:transitionName="@string/recipe_image_transition_name" />
 
                 <TextView
@@ -44,7 +44,7 @@
                 <TextView
                     android:id="@+id/recipe_ingredients_text_view"
                     style="@style/AppTheme.NormalText"
-                    android:text="@{recipe.ingredients}" />
+                    android:text="@{recipe.ingredients.toString}" />
 
                 <TextView
                     android:id="@+id/how_to_text_view"
@@ -54,7 +54,7 @@
                 <TextView
                     android:id="@+id/recipe_details_text_view"
                     style="@style/AppTheme.RecipeDetails"
-                    android:text="@{recipe.details}" />
+                    android:text="@{recipe.directions.toString}" />
             </LinearLayout>
 
         </ScrollView>

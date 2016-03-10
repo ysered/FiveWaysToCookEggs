@@ -4,8 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.example.android.fivewaystocookeggs.binding.RecipeBindingAdapter;
+import com.example.android.fivewaystocookeggs.database.RecipesDataSource;
+
+import java.io.IOException;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,12 +25,20 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recipesRecyclerView = (RecyclerView) findViewById(R.id.recipes_recycler_view);
         recipesRecyclerView.setHasFixedSize(true);
 
-        final RecipeBindingAdapter recipeBindingAdapter =
-                new RecipeBindingAdapter(this, this, getRecipes());
-        recipesRecyclerView.setAdapter(recipeBindingAdapter);
+        try {
+            List<Recipe> recipes2 = getRecipes2();
+            Log.d("Recipes: ", recipes2.toString());
+
+            final RecipeBindingAdapter recipeBindingAdapter =
+                    new RecipeBindingAdapter(this, this, recipes2);
+            recipesRecyclerView.setAdapter(recipeBindingAdapter);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // TODO: handle error
+        }
     }
 
-    private Recipe[] getRecipes() {
+    /*private Recipe[] getRecipes() {
         return new Recipe[] {
                 new Recipe(
                         R.drawable.egg_in_bread,
@@ -63,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
                         getString(R.string.eggs_by_author_details)
                 )
         };
+    }*/
+
+    private List<Recipe> getRecipes2() throws IOException {
+        final RecipesDataSource dataSource = new RecipesDataSource(this);
+        return dataSource.getRecipes();
     }
 
 }

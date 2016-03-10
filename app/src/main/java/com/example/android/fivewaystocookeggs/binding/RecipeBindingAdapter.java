@@ -11,13 +11,15 @@ import com.example.android.fivewaystocookeggs.RecipeCardOnClickHandler;
 import com.example.android.fivewaystocookeggs.ShareAction;
 import com.example.android.fivewaystocookeggs.databinding.RecipeCardViewBinding;
 
+import java.util.List;
+
 public class RecipeBindingAdapter extends BindingAdapter<RecipeCardViewBinding> {
 
     private final Context mContext;
     private final Activity mActivity;
-    private final Recipe[] mRecipes;
+    private final List<Recipe> mRecipes;
 
-    public RecipeBindingAdapter(Context context, Activity activity, Recipe[] recipes) {
+    public RecipeBindingAdapter(Context context, Activity activity, List<Recipe> recipes) {
         super(R.layout.recipe_card_view);
         mContext = context;
         mActivity = activity;
@@ -26,7 +28,7 @@ public class RecipeBindingAdapter extends BindingAdapter<RecipeCardViewBinding> 
 
     @Override
     protected void updateBinding(RecipeCardViewBinding binding, int position) {
-        final Recipe recipe = mRecipes[position];
+        final Recipe recipe = mRecipes.get(position);
         binding.setRecipe(recipe);
         final CardView recipeCardView = (CardView) binding.getRoot();
         binding.setCardViewOnClickHandler(
@@ -41,7 +43,7 @@ public class RecipeBindingAdapter extends BindingAdapter<RecipeCardViewBinding> 
 
     @Override
     public int getItemCount() {
-        return mRecipes.length;
+        return mRecipes.size();
     }
 
 }

@@ -10,11 +10,11 @@ public class ShareAction {
 
     public static void share(Context context, Activity activity, Recipe recipe) {
         final String emailText = String.format(context.getString(R.string.share_template),
-                recipe.ingredients, recipe.details);
+                recipe.getIngredients(), recipe.getDirections());
         Intent shareIntent = ShareCompat.IntentBuilder
                 .from(activity)
                 .setType("text/html")
-                .setSubject(recipe.title)
+                .setSubject(recipe.getTitle())
                 .setText(emailText)
                 .getIntent();
         if (shareIntent.resolveActivity(context.getPackageManager()) != null) {

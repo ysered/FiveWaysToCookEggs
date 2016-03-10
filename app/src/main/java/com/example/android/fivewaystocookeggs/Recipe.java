@@ -3,28 +3,24 @@ package com.example.android.fivewaystocookeggs;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Recipe implements Parcelable {
-    public final int imageResource;
-    public final String title;
-    public final String ingredientsLine;
-    public final String ingredients;
-    public final String details;
+import java.util.List;
 
-    public Recipe(int imageResource, String title, String ingredientsLine, String ingredients,
-                  String details) {
-        this.imageResource = imageResource;
-        this.title = title;
-        this.ingredientsLine = ingredientsLine;
-        this.ingredients = ingredients;
-        this.details = details;
+public class Recipe implements Parcelable {
+    private long id;
+    private String title;
+    private String imageName;
+    private List<String> ingredients;
+    private List<String> directions;
+
+    public Recipe() {
     }
 
     protected Recipe(Parcel in) {
-        imageResource = in.readInt();
+        id = in.readLong();
         title = in.readString();
-        ingredientsLine = in.readString();
-        ingredients = in.readString();
-        details = in.readString();
+        imageName = in.readString();
+        ingredients = in.createStringArrayList();
+        directions = in.createStringArrayList();
     }
 
     public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
@@ -39,6 +35,46 @@ public class Recipe implements Parcelable {
         }
     };
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public List<String> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public List<String> getDirections() {
+        return directions;
+    }
+
+    public void setDirections(List<String> directions) {
+        this.directions = directions;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -46,10 +82,21 @@ public class Recipe implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(imageResource);
+        dest.writeLong(id);
         dest.writeString(title);
-        dest.writeString(ingredientsLine);
-        dest.writeString(ingredients);
-        dest.writeString(details);
+        dest.writeString(imageName);
+        dest.writeStringList(ingredients);
+        dest.writeStringList(directions);
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", imageName='" + imageName + '\'' +
+                ", ingredients=" + ingredients +
+                ", directions=" + directions +
+                '}';
     }
 }
