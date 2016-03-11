@@ -2,13 +2,16 @@ package com.example.android.fivewaystocookeggs;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.TextUtils;
 
 import java.util.List;
 
 public class Recipe implements Parcelable {
+
     private long id;
     private String title;
     private String imageName;
+    private int imageResource;
     private List<String> ingredients;
     private List<String> directions;
 
@@ -19,6 +22,7 @@ public class Recipe implements Parcelable {
         id = in.readLong();
         title = in.readString();
         imageName = in.readString();
+        imageResource = in.readInt();
         ingredients = in.createStringArrayList();
         directions = in.createStringArrayList();
     }
@@ -34,6 +38,21 @@ public class Recipe implements Parcelable {
             return new Recipe[size];
         }
     };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(title);
+        dest.writeString(imageName);
+        dest.writeInt(imageResource);
+        dest.writeStringList(ingredients);
+        dest.writeStringList(directions);
+    }
 
     public long getId() {
         return id;
@@ -59,6 +78,14 @@ public class Recipe implements Parcelable {
         this.imageName = imageName;
     }
 
+    public int getImageResource() {
+        return imageResource;
+    }
+
+    public void setImageResource(int imageResource) {
+        this.imageResource = imageResource;
+    }
+
     public List<String> getIngredients() {
         return ingredients;
     }
@@ -75,18 +102,34 @@ public class Recipe implements Parcelable {
         this.directions = directions;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public String getIngredientsLine() {
+        if (ingredients != null && ingredients.size() > 0) {
+            final String line = TextUtils.join(", ", ingredients).toLowerCase();
+            return line.substring(0, 1).toUpperCase() + line.substring(1);
+        }
+        return "";
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(id);
-        dest.writeString(title);
-        dest.writeString(imageName);
-        dest.writeStringList(ingredients);
-        dest.writeStringList(directions);
+    public String getIngredientsList() {
+        if (ingredients != null && ingredients.size() > 0) {
+            StringBuilder list = new StringBuilder();
+            for (int i = 0; i < ingredients.size(); i++) {
+                list.append("• ");
+                list.append(ingredients.get(i));
+                if (i != ingredients.size() - 1) {
+                    list.append("\n");
+                }
+            }
+            return list.toString();
+        }
+        return "";
+    }
+
+    public String getDirectionsList() {
+        if (directions != null && directions.size() > 0) {
+            return TextUtils.join("\n\n", directions);
+        }
+        return "";
     }
 
     @Override
@@ -95,8 +138,10 @@ public class Recipe implements Parcelable {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", imageName='" + imageName + '\'' +
+                ", imageResource=" + imageResource +
                 ", ingredients=" + ingredients +
                 ", directions=" + directions +
                 '}';
     }
+
 }

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class RecipesDataSource {
 
-    private static final String DATABASE_NAME = "five_recipes.db";
+    private static final String DATABASE_NAME = "recipes.db";
     private static final int DATABASE_VERSION = 1;
 
     private final SQLiteDatabase mDatabase;

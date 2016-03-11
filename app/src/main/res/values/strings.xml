@@ -1,40 +1,12 @@
 <resources>
     <string name="app_name">5 ways to cook eggs</string>
-
     <string name="recipe_image_transition_name">recipe_image_transition</string>
     <string name="recipe_title_transition_name">recipe_title_transition</string>
-
     <string name="card_image_desc">Image</string>
     <string name="ingredients">Ingredients</string>
     <string name="share">Share</string>
-    <string name="how_to">Method</string>
-
-    <string name="share_template">Ingredients:\n\n%1$s\n\nMethod:\n\n%2$s</string>
-    <string name="no_mail_clients_installed">No mail clients found</string>
-
-    <string name="eggs_in_bread">Scrambled eggs in bread</string>
-    <string name="eggs_in_bread_ingredients_line">Eggs, bread with crust, salt</string>
-    <string name="eggs_in_bread_ingredients">&#8226; Eggs\n&#8226; Bread with crust\n&#8226; Salt</string>
-    <string name="eggs_in_bread_details">Take a slice of bread and take out a core - it will form scrambled eggs. Lightly fry it in a pan. In the resulting form, pour the egg, lightly salt it and fry only one side, but you can with two.\n\nYou can experiment with the ingredients, adding cheese or tomatoes.</string>
-
-    <string name="french_eggs">French scrambled eggs</string>
-    <string name="french_eggs_ingredients_line">4&#8211;5 eggs, cup sour cream, salt, pepper, spices</string>
-    <string name="french_eggs_ingredients">&#8226; 4&#8211;5 eggs\n&#8226; Cup sour cream\n&#8226; Salt\n&#8226; Pepper\n&#8226; Spices</string>
-    <string name="french_eggs_details">First you need to pour the cream into the pan (without oil!) and wait until liquid will be evaporated. Then carefully pour the eggs, salt-pepper and cover pan with a lid. Turn off or make the minimum fire, wait 5 minutes.\n\nVoilà! Breakfast is ready.</string>
-
-    <string name="eggs_in_tomatoes">Eggs in tomatoes</string>
-    <string name="eggs_in_tomatoes_ingredients_line">Eggs, tomatoes, butter, salt, pepper, fresh greenery, spices</string>
-    <string name="eggs_in_tomatoes_ingredients">&#8226; Eggs\n&#8226; Tomatoes\n&#8226; Butter\n&#8226; Salt\n&#8226; Pepper\n&#8226; Fresh greenery\n&#8226; Spices</string>
-    <string name="eggs_in_tomatoes_details">This method will take 10&#8211;15 minutes longer than the previous one, but it\'s worth it.\n\nFor a start take a tomato, cut the top, remove with a spoon the pulp to form a \"cup\". Grease with butter inside this \"cup\". Pour the egg (try not to damage the yolk), add salt, pepper and herbs and put in the oven for about 20 minutes.</string>
-
-    <string name="eggs_in_baskets">Eggs in a basket</string>
-    <string name="eggs_in_baskets_ingredients_line">Eggs (preferably quail), bacon, white bread, salt, pepper, seasonings</string>
-    <string name="eggs_in_baskets_ingredients">&#8226; Eggs (preferably quail)\n&#8226; Bacon\n&#8226; White bread\n&#8226; Salt\n&#8226; Pepper\n&#8226; Spices</string>
-    <string name="eggs_in_baskets_details">This method is a bit more complicated, because you\'ll have to find the form for baking (muffins or any other similar form).\n\nThe bread must be cut into small slices and put them in baking dish. Then you need to fry a couple of minutes the bacon, but make it so that it remained soft &#8211; not too much! Lay the bacon along the walls of the bread basket. Pour in an egg (or two in the case of quail) and flavor. Oven cooking takes about 7 minutes and in the microwave &#8211; 2 minutes.</string>
-
-    <string name="eggs_by_author">Scrambled eggs by author</string>
-    <string name="eggs_by_author_ingredients_line">3&#8211;4 eggs, cheese, tomatoes, sausage, salt, pepper, herbs, spices</string>
-    <string name="eggs_by_author_ingredients">&#8226; 3&#8211;4 eggs\n&#8226; Cheese\n&#8226; Tomatoes\n&#8226; Sausage\n&#8226; Salt\n&#8226; Pepper\n&#8226; Herbs\n&#8226; Spices</string>
-    <string name="eggs_by_author_details">This recipe is versatile: any ingredient (except the eggs, of course) you can replace anything &#8211; use your imagination and the resources of your refrigerator.\n\nFirst you need to cut the sausages and tomatoes into rings and fry them. Then pour the eggs into the pan, grate the cheese, season with salt and pepper and cover with lid. Cook on minimal heat 5&#8211;7 minutes. Garnish with parsley ready meal.\n\n Bon appétit!</string>
+    <string name="directions">Directions</string>
     <string name="action_share">Share</string>
+    <string name="share_template">Ingredients:\n\n%1$s\n\nDirections:\n\n%2$s</string>
+    <string name="no_mail_clients_installed">No mail clients found</string>
 </resources>

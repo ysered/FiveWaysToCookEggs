@@ -29,6 +29,9 @@ public class RecipeBindingAdapter extends BindingAdapter<RecipeCardViewBinding> 
     @Override
     protected void updateBinding(RecipeCardViewBinding binding, int position) {
         final Recipe recipe = mRecipes.get(position);
+        final int imageResource = mContext.getResources()
+                .getIdentifier(recipe.getImageName(), "drawable", mContext.getPackageName());
+        recipe.setImageResource(imageResource);
         binding.setRecipe(recipe);
         final CardView recipeCardView = (CardView) binding.getRoot();
         binding.setCardViewOnClickHandler(

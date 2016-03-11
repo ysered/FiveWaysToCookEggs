@@ -30,7 +30,7 @@
             <ImageView
                 android:id="@+id/recipe_image_view"
                 style="@style/AppTheme.CardImage"
-                imageResource="\@drawable/@{recipe.imageName}"
+                imageResource="@{recipe.imageResource}"
                 android:contentDescription="@string/card_image_desc"
                 android:transitionName="@string/recipe_image_transition_name" />
 
@@ -43,7 +43,7 @@
             <TextView
                 android:id="@+id/card_ingredients_line_text_view"
                 style="@style/AppTheme.RecipeIngredientsCard"
-                android:text="@{recipe.ingredients.toString}" />
+                android:text="@{recipe.ingredientsLine}" />
 
             <Button
                 android:id="@+id/share_button"
