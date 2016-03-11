@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Recipe implements Parcelable {
+
     public final int imageResource;
     public final String title;
     public final String ingredientsLine;
@@ -28,6 +29,7 @@ public class Recipe implements Parcelable {
     }
 
     public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
+
         @Override
         public Recipe createFromParcel(Parcel in) {
             return new Recipe(in);
@@ -37,6 +39,7 @@ public class Recipe implements Parcelable {
         public Recipe[] newArray(int size) {
             return new Recipe[size];
         }
+
     };
 
     @Override
@@ -52,4 +55,5 @@ public class Recipe implements Parcelable {
         dest.writeString(ingredients);
         dest.writeString(details);
     }
+
 }

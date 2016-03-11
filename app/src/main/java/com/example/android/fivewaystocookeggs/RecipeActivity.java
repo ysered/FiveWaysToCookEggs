@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class RecipeActivity extends AppCompatActivity {
 
     public static final String RECIPE_PARCELABLE = "recipe_parcelable";
+
     private Recipe mRecipe;
 
     @Override
@@ -44,13 +45,11 @@ public class RecipeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_action_share:
-                ShareAction.share(this, this, mRecipe);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (R.id.menu_action_share == item.getItemId()) {
+            ShareAction.share(this, this, mRecipe);
+            return true;
         }
-
+        return super.onOptionsItemSelected(item);
     }
+
 }
