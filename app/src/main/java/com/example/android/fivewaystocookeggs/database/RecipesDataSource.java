@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.android.fivewaystocookeggs.Recipe;
+import com.example.android.fivewaystocookeggs.database.model.Recipe;
 
 import java.io.IOException;
 import java.util.ArrayList;

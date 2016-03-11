@@ -6,7 +6,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 
 import com.example.android.fivewaystocookeggs.R;
-import com.example.android.fivewaystocookeggs.Recipe;
+import com.example.android.fivewaystocookeggs.database.model.Recipe;
 import com.example.android.fivewaystocookeggs.RecipeCardOnClickHandler;
 import com.example.android.fivewaystocookeggs.ShareAction;
 import com.example.android.fivewaystocookeggs.databinding.RecipeCardViewBinding;

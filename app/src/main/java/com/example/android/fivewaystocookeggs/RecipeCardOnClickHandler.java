@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android.fivewaystocookeggs.database.model.Recipe;
+
 public class RecipeCardOnClickHandler implements CardView.OnClickListener {
 
     private final Context mContext;

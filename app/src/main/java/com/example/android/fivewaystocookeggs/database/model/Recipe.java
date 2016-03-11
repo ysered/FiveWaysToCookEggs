@@ -1,4 +1,4 @@
-package com.example.android.fivewaystocookeggs;
+package com.example.android.fivewaystocookeggs.database.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

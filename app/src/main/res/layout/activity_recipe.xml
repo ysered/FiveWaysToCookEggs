@@ -4,7 +4,7 @@
     <data>
         <variable
             name="recipe"
-            type="com.example.android.fivewaystocookeggs.Recipe" />
+            type="com.example.android.fivewaystocookeggs.database.model.Recipe" />
     </data>
 
     <LinearLayout

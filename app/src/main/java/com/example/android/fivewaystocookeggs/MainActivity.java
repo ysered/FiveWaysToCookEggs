@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.example.android.fivewaystocookeggs.binding.RecipeBindingAdapter;
 import com.example.android.fivewaystocookeggs.database.RecipesDataSource;
+import com.example.android.fivewaystocookeggs.database.model.Recipe;
 
 import java.io.IOException;
 import java.util.List;

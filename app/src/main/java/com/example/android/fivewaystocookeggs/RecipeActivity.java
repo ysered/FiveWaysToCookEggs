@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.android.fivewaystocookeggs.database.model.Recipe;
 import com.example.android.fivewaystocookeggs.databinding.ActivityRecipeBinding;
 
 public class RecipeActivity extends AppCompatActivity {
