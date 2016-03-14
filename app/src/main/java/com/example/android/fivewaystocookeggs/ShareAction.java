@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.support.v4.app.ShareCompat;
 import android.widget.Toast;
 
+import com.example.android.fivewaystocookeggs.model.Recipe;
+
+
 public class ShareAction {
 
-    public static void share(Context context, Activity activity, Recipe recipe) {
+    public void share(Context context, Activity activity, Recipe recipe) {
         final String emailText = String.format(context.getString(R.string.share_template),
                 recipe.ingredients, recipe.details);
         Intent shareIntent = ShareCompat.IntentBuilder

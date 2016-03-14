@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include layout="@layout/toolbar" />
+    <data class=".RecipeDetailsBinding">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        <variable
+            name="recipe"
+            type="com.example.android.fivewaystocookeggs.model.Recipe" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -29,6 +31,7 @@
                 style="@style/AppTheme.RecipeTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{recipe.title}"
                 android:transitionName="@string/recipe_title_transition_name" />
 
             <TextView
@@ -42,7 +45,8 @@
                 android:id="@+id/recipe_ingredients_text_view"
                 style="@style/AppTheme.NormalText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@{recipe.ingredients}" />
 
             <TextView
                 android:id="@+id/how_to_text_view"
@@ -55,9 +59,10 @@
                 android:id="@+id/recipe_details_text_view"
                 style="@style/AppTheme.RecipeDetails"
                 android:layout_width="match_parent"
+                android:text="@{recipe.details}"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
     </ScrollView>
+</layout>
 
-</LinearLayout>
