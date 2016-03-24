@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android.fivewaystocookeggs.data.Recipe;
+
 public class RecipeActivity extends AppCompatActivity {
 
     public static final String RECIPE_PARCELABLE = "recipe_parcelable";

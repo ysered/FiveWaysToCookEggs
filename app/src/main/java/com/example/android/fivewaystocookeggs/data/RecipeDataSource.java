@@ -1,6 +1,8 @@
-package com.example.android.fivewaystocookeggs;
+package com.example.android.fivewaystocookeggs.data;
 
 import android.content.Context;
+
+import com.example.android.fivewaystocookeggs.R;
 
 public class RecipeDataSource {
 
